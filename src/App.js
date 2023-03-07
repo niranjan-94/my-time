@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './index.css';
+import Today from './pages/Today';
+import Calendar from './pages/Calender';
+import Reports from './pages/Reports';
+import Settings from './pages/Settings';
+import Layout from './components/Layout';
+// import Layout from './Layout';
+// import Today from './Today';
+// import Calendar from './Calendar';
+// import Reports from './Reports';
+// import Settings from './Settings';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={Today} />
+            <Route path="/calendar" component={Calendar} />
+            <Route path="/reports" component={Reports} />
+            <Route path="/settings" component={Settings} />
+          </Switch>
+        </Layout>
+      </div>
+    </Router>
   );
 }
 
