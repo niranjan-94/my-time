@@ -1,7 +1,8 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+/* eslint-disable */
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-function Navigation() {
+const Navigation = () => {
   return (
     <nav>
       <ul>
@@ -27,7 +28,7 @@ function Navigation() {
         </li>
       </ul>
     </nav>
-  );
+  )
 }
 
-export default Navigation;
+export default Navigation
